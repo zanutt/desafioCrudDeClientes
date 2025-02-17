@@ -2,6 +2,8 @@ package com.devsuperior.desafioCrudDeClientes.dtos;
 
 import java.time.LocalDate;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import com.devsuperior.desafioCrudDeClientes.entities.Client;
 
 import jakarta.validation.constraints.NotBlank;
@@ -18,6 +20,7 @@ public class ClientDTO {
     private Double income;
 
     @PastOrPresent(message = "A data de nascimento não válida.")
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private LocalDate birthDate;
 
     private Integer children;
